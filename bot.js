@@ -1,7 +1,12 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client(); 
+const client = new Discord.Client(); 
+require('dotenv-flow').config();
 
-const token ='NTY4ODcwODcwNTYzNDIyMjU4.XLoYqQ.5LmZMCo_fKyJRckNQNVuuWp10yY';
+const config = {
+    token: process.env.TOKEN,
+    owner: process.env.OWNER,
+    prefix: process.env.PREFIX
+}
 
 client.on('ready', () =>{
     console.log('This bot is now Online!')
@@ -49,4 +54,4 @@ bot.client('message', msg=>{
     }
 })
 
-client.login(process.env.BOT_TOKEN);
+client.login(token);
